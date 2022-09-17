@@ -1,0 +1,14 @@
+vue create . -> cria um projeto com Vue.js na pasta local
+gerar projeto no diretório atual
+selecionar os recursos manualmente
+-----------------------------------
+babel
+router                              apenas esses 3
+escolher verção
+-----------------------------------
+use history mode for router -> sim
+in dedicated config file
+não salvar o preset para treinar mais vezes.e 
+
+----------------------------------
+npm run serve
