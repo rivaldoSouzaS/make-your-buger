@@ -12,3 +12,8 @@ não salvar o preset para treinar mais vezes.e
 
 ----------------------------------
 npm run serve
+
+git config --global user.email "rivaldosilva@si.fiponline.edu.br"
+git config --global user.name "rivaldoSouzaS"
+
+
