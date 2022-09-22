@@ -11,29 +11,21 @@
                     <label for="bread">Choose the bread</label>
                     <select name="bread" id="bread" v-model="bread">
                         <option value="">Choose the bread</option>
-                        <option value="Integral">Integral</option>
+                        <option v-for="bread in breads" :key="bread.id" :value="bread.tipo">{{bread.tipo}}</option>
                     </select>
                 </div>
                 <div class="input-container">
                     <label for="meat">Choose the meat</label>
                     <select name="meat" id="meat" v-model="meat">
                         <option value="">Choose the meat</option>
-                        <option value="Maminha">Maminha</option>
+                        <option v-for="meat in meats" :key="meat.id" :value="meat.tipo">{{meat.tipo}}</option>>
                     </select>
                 </div>
                 <div id="optionals-container" class="input-container">
                     <label id="optionals-title" for="optionals">Choose the optionals</label>
-                    <div class="checkbox-container">
-                        <input type="checkbox" name="optionals" v-model="optionals" value="Salami">
-                        <span>Salami</span>
-                    </div>
-                    <div class="checkbox-container">
-                        <input type="checkbox" name="optionals" v-model="optionals" value="Salami">
-                        <span>Salami</span>
-                    </div>
-                    <div class="checkbox-container">
-                        <input type="checkbox" name="optionals" v-model="optionals" value="Salami">
-                        <span>Salami</span>
+                    <div v-for = "optional in optionalsData" :key="optional.id" class="checkbox-container">
+                        <input type="checkbox" name="optionals" v-model="optionals" :value="optional.tipo">
+                        <span>{{optional.tipo}}</span>
                     </div>
                 </div>
                 <div class="input-container">
@@ -47,7 +39,33 @@
 <script>
 
     export default{
-        name: 'BurgerForm'
+        name: 'BurgerForm',
+        data(){
+            return{
+                breads: null,
+                meats: null,
+                optionalsData: null,
+                name: null,
+                bread: null,
+                meat: null,
+                optionals: [],
+                status: "Solicitado",
+                msg: null
+            }
+        },
+        methods:{
+            async getIngredients(){
+                const req = await fetch("http://localhost:3000/ingredientes")
+                const data = await req.json()
+
+                this.breads = data.paes
+                this.meats = data.carnes
+                this.optionalsData = data.opcionais
+            }
+        },
+        mounted(){
+            this.getIngredients()
+        }
     }
 </script>
 
