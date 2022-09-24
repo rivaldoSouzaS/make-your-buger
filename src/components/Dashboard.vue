@@ -1,7 +1,7 @@
 <template>
     <div id="burger-table">
         <div>
-            <div id="burguer-table-heading">
+            <div id="burger-table-heading">
                 <div class="order-id"> #</div>
                 <div>Costumer</div>
                 <div>Bread</div>
@@ -11,55 +11,17 @@
 
             </div>
         </div>
-        <div id="burguer-table-rows">
-            <div class="burguer-table-row">
-                <div class="order-number">1</div>
-                <div>Rivaldo</div>
-                <div>Italian Bread</div>
-                <div>Picanha</div>
+        <div v-for="burger in burgers" :key="burger.id" id="burger-table-rows">
+            <div class="burger-table-row">
+                <div class="order-number">{{burger.id}}</div>
+                <div>{{burger.name}}</div>
+                <div>{{burger.bread}}</div>
+                <div>{{burger.meat}}</div>
                 <div>
                     <ul>
-                        <li>Tomatoes</li>
-                        <li>Salame</li>
-                        <li>Potatoes</li>
-                    </ul>
-                </div>
-                <div>
-                    <select name="status" class="status">
-                        <option value="">Buerger's name</option>
-                    </select>
-                    <button class="delete">Cancel</button>
-                </div>
-            </div>
-            <div class="burguer-table-row">
-                <div class="order-number">1</div>
-                <div>Rivaldo</div>
-                <div>Italian Bread</div>
-                <div>Picanha</div>
-                <div>
-                    <ul>
-                        <li>Tomatoes</li>
-                        <li>Salame</li>
-                        <li>Potatoes</li>
-                    </ul>
-                </div>
-                <div>
-                    <select name="status" class="status">
-                        <option value="">Buerger's name</option>
-                    </select>
-                    <button class="delete">Cancel</button>
-                </div>
-            </div>
-            <div class="burguer-table-row">
-                <div class="order-number">1</div>
-                <div>Rivaldo</div>
-                <div>Italian Bread</div>
-                <div>Picanha</div>
-                <div>
-                    <ul>
-                        <li>Tomatoes</li>
-                        <li>Salame</li>
-                        <li>Potatoes</li>
+                        <li v-for="(optional, index ) in burger.optionals" :key="index">
+                            {{optional}}
+                        </li>
                     </ul>
                 </div>
                 <div>
@@ -78,8 +40,21 @@ export default {
     name: 'Dashboard',
     data(){
         return{
-
+            burgers: null,
+            burger_id: null,
+            status: []
         }
+    },
+    methods:{
+        async getOrders(){
+            const req = await fetch("http://localhost:3000/burgers")
+            const data = await req.json()
+            this.burgers = data;
+            console.log(this.burgers)
+        }
+    },
+    mounted(){
+        this.getOrders()
     }
 }
 </script>
@@ -90,32 +65,32 @@ export default {
         margin: 0px auto;
     }
 
-    #burguer-table-heading, 
-    #burguer-table-rows,
-    .burguer-table-row{
+    #burger-table-heading, 
+    #burger-table-rows,
+    .burger-table-row{
         display: flex;
         flex-wrap: wrap;
     }
 
-    #burguer-table-heading{
+    #burger-table-heading{
         font-weight: bold;
         padding:12px;
         border-bottom: 3px solid #333;
     }
 
-    #burguer-table-heading div,
-    .burguer-table-row div{
+    #burger-table-heading div,
+    .burger-table-row div{
         width: 19%;
     }
 
-    .burguer-table-row{
+    .burger-table-row{
         width: 100%;
         padding: 12px;
         border-bottom: 1px solid #333;
     }
 
-    #burguer-table-heading .order-id,
-    .burguer-table-row .order-number{
+    #burger-table-heading .order-id,
+    .burger-table-row .order-number{
         width: 5%;
     }
 
