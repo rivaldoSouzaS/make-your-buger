@@ -1,6 +1,8 @@
 <template>
     <div>
+        <!--componente de mensagem-->
         <Message :msg="msg" v-show="msg"/>
+        <!--componente de mensagem-->
         <div>
             <form id="burger-form" @submit="createBurguer">
                 <div class="input-container">
