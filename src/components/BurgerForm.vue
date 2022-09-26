@@ -73,7 +73,7 @@
                 status: "Solicitado"
             };
             const dataJson = JSON.stringify(data);
-            console.log(dataJson);
+            //console.log(dataJson);
             const req = await fetch("http://localhost:3000/burgers", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },

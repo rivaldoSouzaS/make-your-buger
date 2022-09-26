@@ -88,32 +88,33 @@
       "bread": "Italiano Branco",
       "optionals": [
         "Bacon",
-        "Pepino"
-      ],
-      "status": "Finalizado",
-      "id": 2
-    },
-    {
-      "name": "Rivaldo",
-      "meat": "Picanha",
-      "bread": "Italiano Branco",
-      "optionals": [
-        "Bacon",
         "Tomate"
       ],
       "status": "Solicitado",
       "id": 3
     },
     {
-      "name": "Tony",
-      "meat": "Picanha",
+      "name": "Daniel",
+      "meat": "Alcatra",
       "bread": "3 Queijos",
       "optionals": [
         "Bacon",
         "Salame"
       ],
-      "status": "Solicitado",
-      "id": 4
+      "status": "Finalizado",
+      "id": 5
+    },
+    {
+      "name": "Fabio",
+      "meat": "Picanha",
+      "bread": "Italiano Branco",
+      "optionals": [
+        "Bacon",
+        "Cheddar",
+        "Tomate"
+      ],
+      "status": "Finalizado",
+      "id": 6
     }
   ]
 }
