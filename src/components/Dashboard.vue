@@ -25,10 +25,12 @@
                     </ul>
                 </div>
                 <div>
-                    <select name="status" class="status">
-                        <option value="">Buerger's name</option>
+                    <select @change="updateBurger($event, burger.id)" name="status" class="status">
+                        <option v-for="statu in status" :key="statu.id" :value="statu.tipo" :selected="burger.status == statu.tipo">
+                            {{statu.tipo}}
+                        </option>
                     </select>
-                    <button class="delete">Cancel</button>
+                    <button @click="deleteBurher(burger.id)" class="delete">Cancel</button>
                 </div>
             </div>
         </div>
@@ -50,11 +52,39 @@ export default {
             const req = await fetch("http://localhost:3000/burgers")
             const data = await req.json()
             this.burgers = data;
-            console.log(this.burgers)
+        },
+
+        async getStatus(){
+            const req = await fetch("http://localhost:3000/status")
+            const data = await req.json()
+            this.status = data;
+
+            console.log(this.status)
+        },
+
+        async deleteBurher(id){
+            const req = await fetch(`http://localhost:3000/burgers/${id}`,{
+                method: "DELETE"
+            })
+            const res = await req.json()
+            //msg
+            this.getOrders()
+        },
+        async updateBurger(event, id){
+            const option = event.target.value
+
+            const dataJson = JSON.stringify({status: option});
+            const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: dataJson
+            });
+            const res = await req.json()
         }
     },
     mounted(){
-        this.getOrders()
+        this.getOrders(),
+        this.getStatus()
     }
 }
 </script>

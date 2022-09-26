@@ -84,24 +84,13 @@
   "burgers": [
     {
       "name": "Rivaldo",
-      "meat": "Maminha",
-      "bread": "Italiano Branco",
-      "optionals": [
-        "Bacon",
-        "Pepino"
-      ],
-      "status": "Solicitado",
-      "id": 1
-    },
-    {
-      "name": "Rivaldo",
       "meat": "Picanha",
       "bread": "Italiano Branco",
       "optionals": [
         "Bacon",
         "Pepino"
       ],
-      "status": "Solicitado",
+      "status": "Finalizado",
       "id": 2
     },
     {
@@ -116,153 +105,15 @@
       "id": 3
     },
     {
-      "name": "Rivaldo",
+      "name": "Tony",
       "meat": "Picanha",
-      "bread": "Italiano Branco",
+      "bread": "3 Queijos",
       "optionals": [
         "Bacon",
-        "Tomate"
+        "Salame"
       ],
       "status": "Solicitado",
       "id": 4
-    },
-    {
-      "name": "Rivaldo",
-      "meat": "Picanha",
-      "bread": "Italiano Branco",
-      "optionals": [
-        "Bacon",
-        "Tomate"
-      ],
-      "status": "Solicitado",
-      "id": 5
-    },
-    {
-      "name": "Rivaldo",
-      "meat": "Picanha",
-      "bread": "3 Queijos",
-      "optionals": [
-        "Salame",
-        "Pepino"
-      ],
-      "status": "Solicitado",
-      "id": 6
-    },
-    {
-      "name": "Rivaldo",
-      "meat": "Picanha",
-      "bread": "3 Queijos",
-      "optionals": [
-        "Salame",
-        "Cebola roxa"
-      ],
-      "status": "Solicitado",
-      "id": 7
-    },
-    {
-      "name": "Rivaldo",
-      "meat": "Maminha",
-      "bread": "Italiano Branco",
-      "optionals": [
-        "Bacon"
-      ],
-      "status": "Solicitado",
-      "id": 8
-    },
-    {
-      "name": "Rivaldo",
-      "meat": "Alcatra",
-      "bread": "Italiano Branco",
-      "optionals": [
-        "Bacon",
-        "Salame"
-      ],
-      "status": "Solicitado",
-      "id": 9
-    },
-    {
-      "name": "Rivaldo",
-      "meat": "Picanha",
-      "bread": "Italiano Branco",
-      "optionals": [
-        "Salame",
-        "Tomate"
-      ],
-      "status": "Solicitado",
-      "id": 10
-    },
-    {
-      "name": "",
-      "meat": "",
-      "bread": "",
-      "optionals": [],
-      "status": "Solicitado",
-      "id": 11
-    },
-    {
-      "name": "Rivaldo",
-      "meat": "Picanha",
-      "bread": "3 Queijos",
-      "optionals": [
-        "Salame"
-      ],
-      "status": "Solicitado",
-      "id": 12
-    },
-    {
-      "name": "Rivaldo",
-      "meat": "Picanha",
-      "bread": "3 Queijos",
-      "optionals": [
-        "Bacon"
-      ],
-      "status": "Solicitado",
-      "id": 13
-    },
-    {
-      "name": "Rivaldo",
-      "meat": "Picanha",
-      "bread": "Parmesão e Orégano",
-      "optionals": [
-        "Bacon",
-        "Salame"
-      ],
-      "status": "Solicitado",
-      "id": 14
-    },
-    {
-      "name": "Rivaldo",
-      "meat": "Alcatra",
-      "bread": "Parmesão e Orégano",
-      "optionals": [
-        "Salame",
-        "Cheddar"
-      ],
-      "status": "Solicitado",
-      "id": 15
-    },
-    {
-      "name": "Tony",
-      "meat": null,
-      "bread": "3 Queijos",
-      "optionals": [
-        "Bacon",
-        "Salame"
-      ],
-      "status": "Solicitado",
-      "id": 16
-    },
-    {
-      "name": "Fabio",
-      "meat": "Alcatra",
-      "bread": "3 Queijos",
-      "optionals": [
-        "Bacon",
-        "Salame",
-        "Cebola roxa"
-      ],
-      "status": "Solicitado",
-      "id": 17
     }
   ]
 }
