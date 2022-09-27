@@ -1,6 +1,9 @@
 <template>
     <div id="burger-table">
         <div>
+            <!--componente de mensagem-->
+            <Message :msg="msg" v-show="msg"/>
+        <!--componente de mensagem-->
             <div id="burger-table-heading">
                 <div class="order-id"> #</div>
                 <div>Costumer</div>
@@ -38,13 +41,16 @@
 </template>
 
 <script>
+    import Message from './Message.vue'
 export default {
+   
     name: 'Dashboard',
     data(){
         return{
             burgers: null,
             burger_id: null,
-            status: []
+            status: [],
+            msg: ""
         }
     },
     methods:{
@@ -67,7 +73,8 @@ export default {
                 method: "DELETE"
             })
             const res = await req.json()
-            //msg
+            this.msg = `Order deleted successfully`
+            setTimeout(()=>this.msg = "", 3000)
             this.getOrders()
         },
         async updateBurger(event, id){
@@ -80,11 +87,16 @@ export default {
                 body: dataJson
             });
             const res = await req.json()
+            this.msg = `Order updated successfully`
+            setTimeout(()=>this.msg = "", 3000)
         }
     },
     mounted(){
         this.getOrders(),
         this.getStatus()
+    },
+    components:{
+        Message
     }
 }
 </script>
